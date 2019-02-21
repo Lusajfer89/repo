@@ -1,0 +1,16 @@
+#!/bin/bash
+
+num=$1
+name=$2
+dir=$3
+
+if [ -d $3 ]; then
+	cd $3
+else
+	mkdir $3 && cd $3
+fi	
+
+for i in `seq 1 $1`
+	do echo "SIEMA$i" > $2$i
+done
+
