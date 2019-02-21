@@ -1,0 +1,21 @@
+#!/bin/bash
+
+plik=$1$.c
+name=$2
+
+cat >> ${1}.c <<EOL
+#include <stdio.h>
+int main()
+{
+// printf() displays the string inside quotation
+printf("Hello, $2");
+return 0;
+}
+EOL
+
+gcc ${1}.c
+
+./a.out
+
+rm -r $1.c
+rm -r a.out 
